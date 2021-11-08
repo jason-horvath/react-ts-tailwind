@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "@component/*": ["component/*"],
+      "@block": ["component/block/index.ts"],
+      "@block/*": ["component/block/*"],
+      "@form": ["component/form/index.ts"],
+      "@form/*": ["component/form/*"],
+      "@hook/*": ["hook/*"],
+      "@interface/*": ["interface/*"],
+      "@store": ["store/index.ts"],
+      "@store/*": ["store/*"],
+      "@utility/*": ["utility/*"]
+    }
+  }
+}

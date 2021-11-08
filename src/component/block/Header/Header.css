@@ -1,0 +1,7 @@
+.header {
+  @apply bg-gray-500 p-2 py-4;
+}
+
+.header__title {
+  @apply text-white font-semibold text-3xl;
+}
