@@ -15,9 +15,7 @@ const Count: FC<CountProps> = ({ externalCount }): JSX.Element => {
   const dispatch = useDispatch();
   const changeByRef = useRef<HTMLInputElement>(null);
   
-  console.log(changeByRef);
   useEffect(() => {
-    changeByRef.current && changeByRef.current.focus()
     if (externalCount != null) {
       dispatch(setCount(externalCount));
     }
