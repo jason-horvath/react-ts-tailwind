@@ -13,6 +13,7 @@ export const countSlice = createSlice({
       state.value += 1;
     },
     decrementBy: (state, action) => {
+      console.log(action.payload);
       state.value -= parseInt(action.payload);
     },
     incrementBy: (state, action) => {

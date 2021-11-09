@@ -4,16 +4,16 @@ import { numberOnly } from '@utility/event/input'
 interface NumberInputProps {
   className?: string;
   defaultValue: number;
-  ref?: RefObject<HTMLInputElement>;
+  inputRef?: RefObject<HTMLInputElement>;
 }
 
-const NumberInput: FC<NumberInputProps> = ({ className, defaultValue, ref }): JSX.Element => {
+const NumberInput: FC<NumberInputProps> = ({ className, defaultValue, inputRef }): JSX.Element => {
   return (
     <>
       <input type="text"
         className={className}
         onKeyPress={(e: KeyboardEvent<HTMLInputElement>) => numberOnly(e)}
-        ref={ref}
+        ref={inputRef}
         defaultValue={defaultValue}
       />
     </>

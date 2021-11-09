@@ -14,8 +14,10 @@ const Count: FC<CountProps> = ({ externalCount }): JSX.Element => {
   const count: number = useSelector((state: RootStateOrAny) => state.count.value);
   const dispatch = useDispatch();
   const changeByRef = useRef<HTMLInputElement>(null);
-
+  
+  console.log(changeByRef);
   useEffect(() => {
+    changeByRef.current && changeByRef.current.focus()
     if (externalCount != null) {
       dispatch(setCount(externalCount));
     }
@@ -40,7 +42,7 @@ const Count: FC<CountProps> = ({ externalCount }): JSX.Element => {
           <div>
             <NumberInput
               className="count__changeby"
-              ref={changeByRef}
+              inputRef={changeByRef}
               defaultValue={200}
             />
           </div>
