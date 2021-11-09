@@ -4,12 +4,18 @@
     "paths": {
       "@/*": ["*"],
       "@component/*": ["component/*"],
+      "@config/*": ["config/*"],
       "@block": ["component/block/index.ts"],
       "@block/*": ["component/block/*"],
       "@form": ["component/form/index.ts"],
       "@form/*": ["component/form/*"],
       "@hook/*": ["hook/*"],
+      "@interface": ["interface/index.ts"],
       "@interface/*": ["interface/*"],
+      "@page": ["component/page/index.tsx"],
+      "@page/*": ["component/page/*"],
+      "@route": ["component/route/index.ts"],
+      "@route/*": ["component/route/*"],
       "@store": ["store/index.ts"],
       "@store/*": ["store/*"],
       "@utility/*": ["utility/*"]
