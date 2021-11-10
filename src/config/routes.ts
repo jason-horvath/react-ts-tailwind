@@ -7,14 +7,20 @@ const routes: RouteInterface[] = [
     name: "Home Page",
     component: Home,
     private: false,
-    exact: true
+    exact: true,
+    componentProps: {
+      title: "Home Page"
+    }
   },
   {
     path: '/about',
     name: "About Page",
     component: About,
     private: false,
-    exact: true
+    exact: true,
+    componentProps: {
+      title: "About Page"
+    }
   },
   {
     path: '/count',

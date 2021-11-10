@@ -1,10 +1,13 @@
 import { FC } from 'react';
 
-interface AboutProps {};
+interface AboutProps {
+  title: string;
+};
 
-const About: FC<AboutProps> = (props): JSX.Element => {
+const About: FC<AboutProps> = ({ title, ...rest }): JSX.Element => {
+  console.log(rest)
   return (
-    <div className="about"></div>
+    <div className="about">{title}</div>
   );
 }
 

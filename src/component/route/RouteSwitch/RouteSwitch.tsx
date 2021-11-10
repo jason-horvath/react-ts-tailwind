@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { RouteComponentProps, Switch } from 'react-router-dom';
 import { PublicRoute, PrivateRoute } from '@route';
 import { RouteInterface } from '@interface';
 import routes from '@config/routes';
@@ -11,10 +11,20 @@ const RouteSwitch: FC<RouteSwitchProps> = (props): JSX.Element => {
     <Switch>
       {routes.map((route: RouteInterface, index: number) => {
         const RouteComponent: FC<RouteInterface> = route.private ? PrivateRoute : PublicRoute;
+        const RenderComponent: any = route.component;
         return (
           <RouteComponent
             key={index}
-            {...route}
+            path={route.path}
+            name={route.name}
+            private={route.private}
+            exact={route.exact}
+            render={(props: RouteComponentProps) => (
+              <RenderComponent
+                {...props}
+                {...route.componentProps}
+              />
+            )}
           />
         )
       })}

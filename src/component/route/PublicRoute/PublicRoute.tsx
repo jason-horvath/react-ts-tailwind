@@ -4,7 +4,9 @@ import { RouteInterface } from '@interface';
 
 const PublicRoute: FC<RouteInterface> = (props): JSX.Element => {
   return (
-    <div className="newClassName"></div>
+    <>
+      <Route {...props}/>
+    </>
   );
 }
 

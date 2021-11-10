@@ -1,10 +1,13 @@
 import { FC } from 'react';
 
-interface HomeProps {};
+interface HomeProps {
+  title: string;
+};
 
-const Home: FC = ({}): JSX.Element => {
+const Home: FC<HomeProps> = (props): JSX.Element => {
+  const { title } = props;
   return (
-    <div className="home"></div>
+    <div className="home">{title}</div>
   );
 }
 
