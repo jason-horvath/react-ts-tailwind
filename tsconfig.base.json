@@ -12,6 +12,7 @@
       "@hook/*": ["hook/*"],
       "@interface": ["interface/index.ts"],
       "@interface/*": ["interface/*"],
+      "@layout/*": ["component/layout/*"],
       "@page": ["component/page/index.tsx"],
       "@page/*": ["component/page/*"],
       "@route": ["component/route/index.ts"],
