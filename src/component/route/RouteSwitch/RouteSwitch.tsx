@@ -3,6 +3,7 @@ import { RouteComponentProps, Switch } from 'react-router-dom';
 import { PublicRoute, PrivateRoute } from '@route';
 import { RouteInterface } from '@interface';
 import routes from '@config/routes';
+import DefaultLayout from '@layout/DefaultLayout/DefaultLayout';
 
 interface RouteSwitchProps {};
 
@@ -20,10 +21,12 @@ const RouteSwitch: FC<RouteSwitchProps> = (props): JSX.Element => {
             private={route.private}
             exact={route.exact}
             render={(props: RouteComponentProps) => (
-              <RenderComponent
-                {...props}
-                {...route.componentProps}
-              />
+              <DefaultLayout>
+                <RenderComponent
+                  {...props}
+                  {...route.componentProps}
+                />
+              </DefaultLayout>
             )}
           />
         )
