@@ -1,7 +1,11 @@
 .nav-top {
-  @apply grid justify-items-end;
+  @apply flex justify-end w-7/12;
 }
 
 .nav-top__item {
-  @apply block;
+  @apply flex-col block mx-5 text-gray-300;
+}
+
+.nav-top__item:hover {
+  @apply text-white;
 }

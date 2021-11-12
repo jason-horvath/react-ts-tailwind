@@ -1,12 +1,15 @@
 import { FC } from 'react';
-import { Footer, Header } from '@block';
+import { Footer, Header, PageHead } from '@block';
 
-interface DefaultLayoutProps {};
+interface DefaultLayoutProps {
+  pageHeading: any;
+};
 
-const DefaultLayout: FC<DefaultLayoutProps> = ({ children }): JSX.Element => {
+const DefaultLayout: FC<DefaultLayoutProps> = ({pageHeading, children }): JSX.Element => {
   return (
     <>
       <Header text="React/Redux, Typescript, and Tailwind" />
+        <PageHead headingText={pageHeading.headingText}/>
         {children}
       <Footer text="Jason Horvath on GitHub" />
     </>

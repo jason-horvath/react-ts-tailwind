@@ -21,7 +21,7 @@ const RouteSwitch: FC<RouteSwitchProps> = (props): JSX.Element => {
             private={route.private}
             exact={route.exact}
             render={(props: RouteComponentProps) => (
-              <DefaultLayout>
+              <DefaultLayout pageHeading={{headingText:"test"}}>
                 <Suspense fallback={<div>Loading...</div>}>
                   <RenderComponent
                     {...props}
