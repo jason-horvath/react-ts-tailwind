@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, Suspense } from 'react';
 import { RouteComponentProps, Switch } from 'react-router-dom';
 import { PublicRoute, PrivateRoute } from '@route';
 import { RouteInterface } from '@interface';
@@ -22,10 +22,12 @@ const RouteSwitch: FC<RouteSwitchProps> = (props): JSX.Element => {
             exact={route.exact}
             render={(props: RouteComponentProps) => (
               <DefaultLayout>
-                <RenderComponent
-                  {...props}
-                  {...route.componentProps}
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <RenderComponent
+                    {...props}
+                    {...route.componentProps}
+                  />
+                </Suspense>
               </DefaultLayout>
             )}
           />

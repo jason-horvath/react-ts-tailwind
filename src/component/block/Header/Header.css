@@ -1,5 +1,5 @@
 .header {
-  @apply bg-gray-500 p-2 py-4;
+  @apply bg-gray-500 p-2 py-4 flex;
 }
 
 .header__title {

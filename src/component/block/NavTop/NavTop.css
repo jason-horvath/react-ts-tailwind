@@ -1,0 +1,7 @@
+.nav-top {
+  @apply grid justify-items-end;
+}
+
+.nav-top__item {
+  @apply block;
+}

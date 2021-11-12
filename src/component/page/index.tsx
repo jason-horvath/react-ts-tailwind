@@ -1,4 +1,5 @@
-import About from '@page/About/About';
-import Home from '@page/Home/Home';
+import AboutPage from '@page/About/AboutPage';
+import CountPage from '@page/Count/CountPage';
+import HomePage from '@page/Home/HomePage';
 
-export { About, Home };
+export { AboutPage, CountPage, HomePage };

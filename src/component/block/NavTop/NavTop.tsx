@@ -1,13 +1,16 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
+import './NavTop.css';
 
 
 const NavTop: FC = (): JSX.Element => {
+  const navLinkClass: string = 'nav-top__item';
+
   return (
     <nav className="nav-top">
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/count">Count</NavLink>
-      <NavLink to="/about">About</NavLink>
+      <NavLink to="/" className={navLinkClass}>Home</NavLink>
+      <NavLink to="/count" className={navLinkClass}>Count</NavLink>
+      <NavLink to="/about" className={navLinkClass}>About</NavLink>
     </nav>
   );
 }

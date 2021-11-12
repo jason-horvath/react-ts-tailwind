@@ -1,14 +1,16 @@
 import { FC, useEffect, useRef } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
+import RemoveCircleTwoToneIcon from '@mui/icons-material/RemoveCircleTwoTone';
 import { countActions } from '@store/actions';
 import { NumberInput } from '@form';
 import './Count.css';
 
 interface CountProps {
-  externalCount?: number;
+  initialCount?: number;
 };
 
-const Count: FC<CountProps> = ({ externalCount }): JSX.Element => {
+const Count: FC<CountProps> = ({ initialCount }): JSX.Element => {
 
   const { decrement, increment, decrementBy, incrementBy, setCount } = {...countActions};
   const count: number = useSelector((state: RootStateOrAny) => state.count.value);
@@ -16,10 +18,10 @@ const Count: FC<CountProps> = ({ externalCount }): JSX.Element => {
   const changeByRef = useRef<HTMLInputElement>(null);
   
   useEffect(() => {
-    if (externalCount != null) {
-      dispatch(setCount(externalCount));
+    if (initialCount != null) {
+      dispatch(setCount(initialCount));
     }
-  }, [dispatch, externalCount, setCount])
+  }, [dispatch, initialCount, setCount])
 
   return (
     <div className="count">
@@ -28,12 +30,12 @@ const Count: FC<CountProps> = ({ externalCount }): JSX.Element => {
         <div>
           <button aria-label="Decrement"
             onClick={() => dispatch(decrement())}>
-            -
+            <RemoveCircleTwoToneIcon/>
           </button>
           <span className="count__value">{count}</span>
           <button aria-label="Increment"
             onClick={() => dispatch(increment())}>
-            +
+            <AddCircleTwoToneIcon/>
           </button>
         </div>
         <div>

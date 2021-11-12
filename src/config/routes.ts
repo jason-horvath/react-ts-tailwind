@@ -1,21 +1,11 @@
 import { RouteInterface } from '@interface';
-import { About, Home } from '@page';
+import { lazyLoad } from '@utility/lazy/lazyLoad';
 
 const routes: RouteInterface[] = [
   {
-    path: '/',
-    name: "Home Page",
-    component: Home,
-    private: false,
-    exact: true,
-    componentProps: {
-      title: "Home Page"
-    }
-  },
-  {
     path: '/about',
     name: "About Page",
-    component: About,
+    component: lazyLoad(import('@page/About/AboutPage')),
     private: false,
     exact: true,
     componentProps: {
@@ -25,10 +15,24 @@ const routes: RouteInterface[] = [
   {
     path: '/count',
     name: "Count Page",
-    component: Home,
+    component: lazyLoad(import('@page/Count/CountPage')),
     private: false,
-    exact: true
+    exact: true,
+    componentProps: {
+      title: "Count Page",
+      initialCount: 20
+    }
   },
+  {
+    path: '/',
+    name: "Home Page",
+    component: lazyLoad(import('@page/Home/HomePage')),
+    private: false,
+    exact: true,
+    componentProps: {
+      title: "Home Page"
+    }
+  }
 ];
 
 export default routes;
