@@ -10,6 +10,7 @@ const NavTop: FC = (): JSX.Element => {
     <nav className="nav-top">
       <NavLink to="/" className={navLinkClass}>Home</NavLink>
       <NavLink to="/count" className={navLinkClass}>Count</NavLink>
+      <NavLink to="/todo" className={navLinkClass}>Todo</NavLink>
       <NavLink to="/about" className={navLinkClass}>About</NavLink>
     </nav>
   );

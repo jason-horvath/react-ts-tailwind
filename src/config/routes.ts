@@ -3,6 +3,16 @@ import { lazyLoad } from '@utility/lazy/lazyLoad';
 
 const routes: RouteInterface[] = [
   {
+    path: '/',
+    name: "Home Page",
+    component: lazyLoad(import('@page/Home/HomePage')),
+    private: false,
+    exact: true,
+    componentProps: {
+      title: "Home Page"
+    }
+  },
+  {
     path: '/about',
     name: "About Page",
     component: lazyLoad(import('@page/About/AboutPage')),
@@ -24,13 +34,13 @@ const routes: RouteInterface[] = [
     }
   },
   {
-    path: '/',
-    name: "Home Page",
-    component: lazyLoad(import('@page/Home/HomePage')),
+    path: '/todo',
+    name: "Todo Page",
+    component: lazyLoad(import('@page/Todo/TodoPage')),
     private: false,
     exact: true,
     componentProps: {
-      title: "Home Page"
+      title: "Todo Page"
     }
   }
 ];
