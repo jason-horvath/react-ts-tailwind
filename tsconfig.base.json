@@ -2,7 +2,6 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "@/*": ["*"],
       "@component/*": ["component/*"],
       "@config/*": ["config/*"],
       "@block": ["component/block/index.ts"],
@@ -19,7 +18,8 @@
       "@route/*": ["component/route/*"],
       "@store": ["store/index.ts"],
       "@store/*": ["store/*"],
-      "@utility/*": ["utility/*"]
+      "@utility/*": ["utility/*"],
+      "@/*": ["*"]
     }
   }
 }

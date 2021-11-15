@@ -1,6 +1,6 @@
 export default interface TodoItemInterface {
   id?: number;
-  name: string;
+  title: string;
   description?: string;
   completed: boolean;
 }

@@ -21,7 +21,7 @@ const Count: FC<CountProps> = ({ initialCount }): JSX.Element => {
     if (initialCount != null) {
       dispatch(setCount(initialCount));
     }
-  }, [dispatch, initialCount, setCount])
+  }, [dispatch, initialCount, setCount]);
 
   return (
     <div className="count">
