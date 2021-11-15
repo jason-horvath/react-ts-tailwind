@@ -16,7 +16,10 @@ export const todoSlice = createSlice({
       state.value = state.value.filter(todo => todo.id !== action.payload);
     },
     updateTodo: (state, action: PayloadAction<TodoItemInterface>) => {
-      
+      state.value = state.value.map((todo) => {
+        return (todo.id === action.payload.id) ?
+          Object.assign({}, action.payload) : todo ;
+      });
     }
   }
 });
