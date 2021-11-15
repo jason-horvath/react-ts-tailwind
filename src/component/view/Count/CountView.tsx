@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import { Count } from '@block';
+import Count from '@view/Count/Count/Count';
 
-interface CountPageProps {
+interface CountViewProps {
   title: string;
   initialCount: number;
 };
 
-const CountPage: FC<CountPageProps> = (props): JSX.Element => {
+const CountView: FC<CountViewProps> = (props): JSX.Element => {
   const { title, initialCount } = props;
   return (
     <div className="count-page">
@@ -16,4 +16,4 @@ const CountPage: FC<CountPageProps> = (props): JSX.Element => {
   );
 }
 
-export default CountPage;
+export default CountView;

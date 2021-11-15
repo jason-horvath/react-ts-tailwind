@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { coalesceEmptyToZero } from '@utility/value/coalesceEmptyToZero';
 
 export const countSlice = createSlice({
   name: 'count',
@@ -12,12 +13,11 @@ export const countSlice = createSlice({
     increment: (state) => {
       state.value += 1;
     },
-    decrementBy: (state, action) => {
-      console.log(action.payload);
-      state.value -= parseInt(action.payload);
+    decrementBy: (state, action: PayloadAction<string | number | undefined>) => {
+      state.value -= coalesceEmptyToZero(action.payload);
     },
-    incrementBy: (state, action) => {
-      state.value += parseInt(action.payload);
+    incrementBy: (state, action: PayloadAction<string | number | undefined>) => {
+      state.value += coalesceEmptyToZero(action.payload);
     },
     setCount(state, action) {
       if(typeof action.payload == 'number') {

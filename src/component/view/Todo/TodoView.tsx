@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { TodoList } from '@block';
+import TodoList from '@view/Todo/TodoList/TodoList';
 
 interface TodoPageProps {
   title: string;

@@ -5,7 +5,7 @@ const routes: RouteInterface[] = [
   {
     path: '/',
     name: "Home Page",
-    component: lazyLoad(import('@page/Home/HomePage')),
+    component: lazyLoad(import('@view/Home/HomeView')),
     private: false,
     exact: true,
     componentProps: {
@@ -15,7 +15,7 @@ const routes: RouteInterface[] = [
   {
     path: '/about',
     name: "About Page",
-    component: lazyLoad(import('@page/About/AboutPage')),
+    component: lazyLoad(import('@view/About/AboutView')),
     private: false,
     exact: true,
     componentProps: {
@@ -25,7 +25,7 @@ const routes: RouteInterface[] = [
   {
     path: '/count',
     name: "Count Page",
-    component: lazyLoad(import('@page/Count/CountPage')),
+    component: lazyLoad(import('@view/Count/CountView')),
     private: false,
     exact: true,
     componentProps: {
@@ -36,7 +36,7 @@ const routes: RouteInterface[] = [
   {
     path: '/todo',
     name: "Todo Page",
-    component: lazyLoad(import('@page/Todo/TodoPage')),
+    component: lazyLoad(import('@view/Todo/TodoView')),
     private: false,
     exact: true,
     componentProps: {
