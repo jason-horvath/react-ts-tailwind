@@ -48,11 +48,11 @@ const Count: FC<CountProps> = ({ initialCount }): JSX.Element => {
           </div>
           <div>
             <button aria-label="Decrement By"
-              onClick={() => dispatch(decrementBy(changeByRef?.current?.value))}>
+              onClick={() => dispatch(decrementBy(changeByRef.current?.value))}>
                 Decrement By
             </button>
             <button aria-label="Increment By"
-              onClick={() => dispatch(incrementBy(changeByRef?.current?.value))}>
+              onClick={() => dispatch(incrementBy(changeByRef.current?.value))}>
                 Increment By
             </button>  
           </div>
