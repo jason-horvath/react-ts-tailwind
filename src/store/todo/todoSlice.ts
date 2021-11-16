@@ -4,7 +4,12 @@ import type { TodoItemInterface, TodoStateInterface } from '@interface';
 const initialState: TodoStateInterface = {
   value: []
 }
-
+const newId = (todos: TodoItemInterface[]) => {
+  let newId = todos.reduce((id: number, todo: TodoItemInterface) => {
+    if(id !== undefined && id < todo?.id) return todo.id;
+    return id;
+  }, 0);
+}
 export const todoSlice = createSlice({
   name: 'todo',
   initialState,

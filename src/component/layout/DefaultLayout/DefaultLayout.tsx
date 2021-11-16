@@ -10,7 +10,9 @@ const DefaultLayout: FC<DefaultLayoutProps> = ({pageHeading, children }): JSX.El
     <>
       <Header text="React/Redux, Typescript, and Tailwind" />
         <ViewHead headingText={pageHeading.headingText}/>
-        {children}
+        <div id="view-container">
+          {children}
+        </div>
       <Footer text="Jason Horvath on GitHub" />
     </>
   );
