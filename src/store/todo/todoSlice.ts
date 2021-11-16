@@ -1,30 +1,27 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { TodoItemInterface, TodoStateInterface } from '@interface';
+import type { TodoItemInterface, TodoItemNewInterface, TodoStateInterface } from '@interface';
+import { autoIncrementKey } from '@utility/array/autoIncrementKey';
 
 const initialState: TodoStateInterface = {
   value: []
 }
-const newId = (todos: TodoItemInterface[]) => {
-  let newId = todos.reduce((id: number, todo: TodoItemInterface) => {
-    if(id !== undefined && id < todo?.id) return todo.id;
-    return id;
-  }, 0);
-}
+
 export const todoSlice = createSlice({
   name: 'todo',
   initialState,
   reducers: {
-    addTodo: (state, action: PayloadAction<TodoItemInterface>) => {
-      state.value.push(action.payload);
+    addTodo: (state, action: PayloadAction<TodoItemNewInterface>) => {
+      const nextId: number = autoIncrementKey(state.value);
+      state.value[nextId] = {id: nextId, ...action.payload};
     },
     removeTodo: (state, action: PayloadAction<number>) => {
-      state.value = state.value.filter(todo => todo.id !== action.payload);
+      // state.value.delete(action.payload);
     },
     updateTodo: (state, action: PayloadAction<TodoItemInterface>) => {
-      state.value = state.value.map((todo) => {
-        return (todo.id === action.payload.id) ?
-          Object.assign({}, action.payload) : todo ;
-      });
+      state.value[action.payload.id] = Object.assign({}, action.payload);
+    },
+    toggleTodoCompleted: (state, action: PayloadAction<number>) => {
+      state.value[action.payload].completed = !state.value[action.payload].completed;
     }
   }
 });

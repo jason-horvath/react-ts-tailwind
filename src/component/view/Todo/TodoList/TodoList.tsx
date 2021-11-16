@@ -13,8 +13,8 @@ const TodoList: FC<TodoListProps> = (props): JSX.Element => {
   return (
     <div className="todo-list">
       <h4>{title}</h4>
-      {todos.map(todo => {
-        return <TodoItem title={todo.title} />
+      {todos.map((todo: TodoItemInterface) => {
+        return <TodoItem {...todo} />
       })}
     </div>
   );
