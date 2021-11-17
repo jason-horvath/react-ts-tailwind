@@ -14,7 +14,7 @@ const TodoList: FC<TodoListProps> = (props): JSX.Element => {
     <div className="todo-list">
       <h4>{title}</h4>
       {todos.map((todo: TodoItemInterface) => {
-        return <TodoItem {...todo} />
+        return <TodoItem key={todo.id} { ...todo} />
       })}
     </div>
   );

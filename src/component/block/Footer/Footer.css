@@ -1,3 +1,4 @@
 .footer {
-  @apply text-center p-3;
+  @apply sm:p-5;
+  @apply text-center p-3 bg-gray-100 p-10;
 }

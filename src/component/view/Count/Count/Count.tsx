@@ -1,9 +1,9 @@
 import { FC, useEffect, useRef } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
-import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
-import RemoveCircleTwoToneIcon from '@mui/icons-material/RemoveCircleTwoTone';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import IndeterminateCheckBox from '@mui/icons-material/IndeterminateCheckBox';
 import { countActions } from '@store/actions';
-import { NumberInput } from '@form';
+import { Button, NumberInput } from '@form';
 import './Count.css';
 
 interface CountProps {
@@ -28,15 +28,15 @@ const Count: FC<CountProps> = ({ initialCount }): JSX.Element => {
       <div className="count__controls">
         <h1 className="count__heading">Count</h1>
         <div>
-          <button aria-label="Decrement"
+          <Button aria-label="Decrement"
             onClick={() => dispatch(decrement())}>
-            <RemoveCircleTwoToneIcon/>
-          </button>
+            <IndeterminateCheckBox/>
+          </Button>
           <span className="count__value">{count}</span>
-          <button aria-label="Increment"
+          <Button aria-label="Increment"
             onClick={() => dispatch(increment())}>
-            <AddCircleTwoToneIcon/>
-          </button>
+            <AddBoxIcon/>
+          </Button>
         </div>
         <div>
           <div>
@@ -47,14 +47,14 @@ const Count: FC<CountProps> = ({ initialCount }): JSX.Element => {
             />
           </div>
           <div>
-            <button aria-label="Decrement By"
+            <Button aria-label="Decrement By"
               onClick={() => dispatch(decrementBy(changeByRef.current?.value))}>
                 Decrement By
-            </button>
-            <button aria-label="Increment By"
+            </Button>
+            <Button aria-label="Increment By"
               onClick={() => dispatch(incrementBy(changeByRef.current?.value))}>
                 Increment By
-            </button>  
+            </Button>  
           </div>
         </div>
       </div>

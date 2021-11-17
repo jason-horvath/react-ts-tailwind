@@ -7,7 +7,7 @@ import DefaultLayout from '@layout/DefaultLayout/DefaultLayout';
 
 interface RouteSwitchProps {};
 
-const RouteSwitch: FC<RouteSwitchProps> = (props): JSX.Element => {
+const RouteSwitch: FC<RouteSwitchProps> = (): JSX.Element => {
   return (
     <Switch>
       {routes.map((route: RouteInterface, index: number) => {
@@ -21,7 +21,7 @@ const RouteSwitch: FC<RouteSwitchProps> = (props): JSX.Element => {
             private={route.private}
             exact={route.exact}
             render={(props: RouteComponentProps) => (
-              <DefaultLayout pageHeading={{headingText:"test"}}>
+              <DefaultLayout pageHeading={{headingText: route.componentProps.title}}>
                 <Suspense fallback={<div>Loading...</div>}>
                   <RenderComponent
                     {...props}

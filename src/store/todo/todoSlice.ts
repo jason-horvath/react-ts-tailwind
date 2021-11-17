@@ -12,10 +12,11 @@ export const todoSlice = createSlice({
   reducers: {
     addTodo: (state, action: PayloadAction<TodoItemNewInterface>) => {
       const nextId: number = autoIncrementKey(state.value);
+      console.log(nextId);
       state.value[nextId] = {id: nextId, ...action.payload};
     },
     removeTodo: (state, action: PayloadAction<number>) => {
-      // state.value.delete(action.payload);
+      state.value.splice(action.payload, 1);
     },
     updateTodo: (state, action: PayloadAction<TodoItemInterface>) => {
       state.value[action.payload.id] = Object.assign({}, action.payload);

@@ -1,20 +1,25 @@
 import { FC } from 'react';
 import TodoList from '@view/Todo/TodoList/TodoList';
 import TodoAdd from '@view/Todo/TodoAdd/TodoAdd';
+import './TodoView.css';
 
-interface TodoPageProps {
+interface TodoViewProps {
   title: string;
 };
 
-const TodoPage: FC<TodoPageProps> = (props): JSX.Element => {
+const TodoView: FC<TodoViewProps> = (props): JSX.Element => {
   const { title } = props;
   return (
-    <div className="todo-page">
-      <h3>{title}</h3>
-      <TodoList title="Todo List" />
-      <TodoAdd title="Todo Add" />
+    <div className="todo-view">
+      <div className="todo-view__col">
+        <TodoList title="Todo List" />
+      </div>
+      <div className="todo-view__col">
+        <TodoAdd title="Todo Add" />
+      </div>
+      
     </div>
   );
 }
 
-export default TodoPage;
+export default TodoView;

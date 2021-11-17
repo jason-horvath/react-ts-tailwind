@@ -1,3 +1,3 @@
 export const isEmpty = (value: any) => {
-  return (value === null || value.length === 0);
+  return (value === null || value === undefined || value.length === 0);
 }

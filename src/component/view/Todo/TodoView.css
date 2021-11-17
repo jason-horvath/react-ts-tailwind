@@ -1,0 +1,7 @@
+.todo-view {
+  @apply flex;
+}
+
+.todo-view__col {
+  @apply flex-1 w-6/12;
+}

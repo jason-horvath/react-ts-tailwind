@@ -7,7 +7,7 @@ interface NumberInputProps {
   inputRef?: RefObject<HTMLInputElement>;
 }
 
-const NumberInput: FC<NumberInputProps> = ({ className, defaultValue, inputRef }): JSX.Element => {
+const NumberInput: FC<NumberInputProps> = ({ className='input', defaultValue, inputRef }): JSX.Element => {
   return (
     <>
       <input type="text"

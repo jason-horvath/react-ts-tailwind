@@ -1,13 +1,22 @@
 import { FC } from 'react';
+import { useDispatch } from 'react-redux'
+import { Card } from '@block';
 import { TodoItemInterface } from '@interface';
+import { todoActions } from '@store/actions';
+import './TodoItem.css';
 
 const TodoItem: FC<TodoItemInterface> = (props): JSX.Element => {
   const { id, title, description, completed } = props;
+  const dispatch = useDispatch();
+  const { removeTodo, toggleTodoCompleted } = {...todoActions};
   return (
-    <div className="todo-item">
-      <h5>{title}</h5>
+    <Card
+      className={(completed ? 'completed' : '') + "todo-item card"}
+      title={title}
+      onClick={(e) => dispatch(toggleTodoCompleted)}
+    >
       <p>{description}</p>
-    </div>
+    </Card>
   );
 }
 

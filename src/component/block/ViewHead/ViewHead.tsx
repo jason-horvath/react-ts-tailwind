@@ -1,11 +1,12 @@
 import { FC } from 'react';
 import { ViewHeadInterface } from '@interface';
+import { Heading } from '@block';
 
 
 const ViewHead: FC<ViewHeadInterface> = ({ headingText }): JSX.Element => {
   return (
-    <div className="page-heading">
-      <h1>{headingText}</h1>
+    <div className="view-head">
+      <Heading level={1}>{headingText}</Heading>
     </div>
   );
 }

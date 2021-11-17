@@ -18,6 +18,8 @@
       "@route/*": ["component/route/*"],
       "@store": ["store/index.ts"],
       "@store/*": ["store/*"],
+      "@type": ["type/index.ts"],
+      "@type/*": ["type/*"],
       "@utility/*": ["utility/*"],
       "@/*": ["*"]
     }

@@ -30,7 +30,7 @@ const routes: RouteInterface[] = [
     exact: true,
     componentProps: {
       title: "Count Page",
-      initialCount: 20
+      initialCount: 50
     }
   },
   {

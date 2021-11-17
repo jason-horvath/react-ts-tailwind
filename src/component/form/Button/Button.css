@@ -1,0 +1,7 @@
+.button {
+  @apply bg-blue-500 text-white rounded font-semibold p-2 px-5 m-3;
+}
+
+.button:hover {
+  @apply bg-blue-600;
+}
