@@ -40,8 +40,13 @@ const TodoAdd: FC<TodoAddProps> = (props): JSX.Element => {
   return (
     <div className="todo-add">
       <h4>{title}</h4>
-      <Input label="Title" type="text" name="todo-title" inputRef={todoRef.title} defaultValue="" placeholder="Title" />
-      <Input label="Description" type="text" name="todo-description" inputRef={todoRef.description} defaultValue="" placeholder="Description"/>
+      <div>
+        <Input label="Title" type="text" name="todo-title" inputRef={todoRef.title} defaultValue="" placeholder="Title" />
+      </div>
+      <div>
+        <Input label="Description" type="text" name="todo-description" inputRef={todoRef.description} defaultValue="" placeholder="Description"/>
+      </div>
+      
       <div>
       <Button aria-label="Add Todo" onClick={dispatchAddTodo}>Add Todo</Button>
       </div>

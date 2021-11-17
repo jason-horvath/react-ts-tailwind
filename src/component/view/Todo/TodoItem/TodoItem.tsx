@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { useDispatch } from 'react-redux'
+import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import { Card } from '@block';
 import { TodoItemInterface } from '@interface';
 import { todoActions } from '@store/actions';
@@ -15,6 +16,7 @@ const TodoItem: FC<TodoItemInterface> = (props): JSX.Element => {
       title={title}
       onClick={(e) => dispatch(toggleTodoCompleted)}
     >
+      <span className="todo-item__remove"><CancelPresentationIcon/></span>
       <p>{description}</p>
     </Card>
   );
