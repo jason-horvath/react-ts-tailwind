@@ -3,7 +3,7 @@
 }
 
 .count__heading {
-  @apply text-blue-500 font-bold text-3xl;
+  @apply text-blue-500;
 }
 
 .count__controls {

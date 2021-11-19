@@ -1,0 +1,27 @@
+h1,h2,h3,h4,h5,h6 {
+  @apply font-bold text-gray-700;
+}
+
+h1.heading {
+  @apply text-3xl;
+}
+
+h2.heading {
+  @apply text-2xl;
+}
+
+h3.heading {
+  @apply text-xl;
+}
+
+h4.heading {
+  @apply text-lg;
+}
+
+h5.heading {
+  @apply text-base;
+}
+
+h6.heading {
+  @apply text-sm;
+}

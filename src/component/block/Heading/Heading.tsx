@@ -10,10 +10,10 @@ interface HeadingProps {
   level: HeadingLevel;
 };
 
-const Heading: FC<HeadingProps> = ({ children, className, level }): JSX.Element => {
+const Heading: FC<HeadingProps> = ({ children, className='heading', level }): JSX.Element => {
   const Tag: HeadingTag = `h${level}`;
   return (
-    <Tag className={className || undefined}>
+    <Tag className={className}>
       {children}
     </Tag> 
   );

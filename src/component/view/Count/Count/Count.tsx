@@ -3,6 +3,7 @@ import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import IndeterminateCheckBox from '@mui/icons-material/IndeterminateCheckBox';
 import { countActions } from '@store/actions';
+import { Heading } from '@block';
 import { Button, NumberInput } from '@form';
 import './Count.css';
 
@@ -26,7 +27,7 @@ const Count: FC<CountProps> = ({ initialCount }): JSX.Element => {
   return (
     <div className="count">
       <div className="count__controls">
-        <h1 className="count__heading">Count</h1>
+        <Heading level={2} className="count__heading heading ">Count</Heading>
         <div>
           <Button aria-label="Decrement"
             onClick={() => dispatch(decrement())}>

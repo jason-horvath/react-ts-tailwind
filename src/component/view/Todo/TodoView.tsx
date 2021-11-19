@@ -8,7 +8,6 @@ interface TodoViewProps {
 };
 
 const TodoView: FC<TodoViewProps> = (props): JSX.Element => {
-  const { title } = props;
   return (
     <div className="todo-view">
       <div className="todo-view__col">

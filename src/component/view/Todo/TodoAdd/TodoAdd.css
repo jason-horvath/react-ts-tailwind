@@ -1,0 +1,7 @@
+.todo-add__input {
+  @apply p-2;
+}
+
+.todo-add__submit {
+  @apply flex justify-center;
+}

@@ -2,7 +2,9 @@ import { FC, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { todoActions } from '@store/actions';
 import { isEmpty } from '@utility/value/isEmpty';
-import { Button, Input } from '@form';
+import { Heading } from '@block';
+import { Button,  Input } from '@form';
+import './TodoAdd.css';
 
 interface TodoAddProps {
   title: string;
@@ -39,15 +41,14 @@ const TodoAdd: FC<TodoAddProps> = (props): JSX.Element => {
 
   return (
     <div className="todo-add">
-      <h4>{title}</h4>
-      <div>
+      <Heading level={4}>{title}</Heading>
+      <div className="todo-add__input">
         <Input label="Title" type="text" name="todo-title" inputRef={todoRef.title} defaultValue="" placeholder="Title" />
       </div>
-      <div>
+      <div className="todo-add__input">
         <Input label="Description" type="text" name="todo-description" inputRef={todoRef.description} defaultValue="" placeholder="Description"/>
       </div>
-      
-      <div>
+      <div className="todo-add__submit">
       <Button aria-label="Add Todo" onClick={dispatchAddTodo}>Add Todo</Button>
       </div>
       
