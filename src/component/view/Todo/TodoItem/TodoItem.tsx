@@ -4,7 +4,7 @@ import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import { Card } from '@block';
 import { TodoItemInterface } from '@interface';
 import { todoActions } from '@store/actions';
-import { isDoubleClick } from '@utility/mouse/isDoubleClick';
+import { isDoubleClick } from '@utility/event/mouse';
 import './TodoItem.css';
 
 const TodoItem: FC<TodoItemInterface> = (props): JSX.Element => {
