@@ -11,12 +11,11 @@ const TodoView: FC<TodoViewProps> = (props): JSX.Element => {
   return (
     <div className="todo-view">
       <div className="todo-view__col">
-        <TodoList title="Todo List" />
-      </div>
-      <div className="todo-view__col">
         <TodoAdd title="Todo Add" />
       </div>
-      
+      <div className="todo-view__col">
+        <TodoList title="Todo List" />
+      </div>
     </div>
   );
 }

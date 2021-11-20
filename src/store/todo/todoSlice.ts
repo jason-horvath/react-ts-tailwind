@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
 import type { TodoItemInterface, TodoItemNewInterface, TodoStateInterface } from '@interface';
-import { autoIncrementKey } from '@utility/array/autoIncrementKey';
 
 const initialState: TodoStateInterface = {
-  value: []
+  value: {}
 }
 
 export const todoSlice = createSlice({
@@ -11,17 +11,16 @@ export const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action: PayloadAction<TodoItemNewInterface>) => {
-      const nextId: number = autoIncrementKey(state.value);
-      console.log(nextId);
-      state.value[nextId] = {id: nextId, ...action.payload};
+      const newId: string = uuidv4();
+      state.value[newId] = {id: newId, ...action.payload};
     },
-    removeTodo: (state, action: PayloadAction<number>) => {
-      state.value.splice(action.payload, 1);
+    removeTodo: (state, action: PayloadAction<string>) => {
+      delete state.value[action.payload];
     },
     updateTodo: (state, action: PayloadAction<TodoItemInterface>) => {
       state.value[action.payload.id] = Object.assign({}, action.payload);
     },
-    toggleTodoCompleted: (state, action: PayloadAction<number>) => {
+    toggleTodoCompleted: (state, action: PayloadAction<string>) => {
       state.value[action.payload].completed = !state.value[action.payload].completed;
     }
   }

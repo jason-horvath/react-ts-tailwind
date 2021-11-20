@@ -1,4 +1,8 @@
+p {
+  @apply m-5;
+}
+
 #layout-container {
   @apply sm:w-full sm:p-3;
-  @apply xl:w-7/12 border-l-2 border-r-2 m-auto p-5 px-2;
+  @apply xl:w-7/12 border-l-2 border-r-2 m-auto p-5 px-5;
 }

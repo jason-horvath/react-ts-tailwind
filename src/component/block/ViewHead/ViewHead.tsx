@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { ViewHeadInterface } from '@interface';
 import { Heading } from '@block';
+import './ViewHead.css';
 
 
 const ViewHead: FC<ViewHeadInterface> = ({ headingText }): JSX.Element => {

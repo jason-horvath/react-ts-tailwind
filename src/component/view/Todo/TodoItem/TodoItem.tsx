@@ -17,7 +17,7 @@ const TodoItem: FC<TodoItemInterface> = (props): JSX.Element => {
       title={title}
       onClick={(e) => dispatch(toggleTodoCompleted)}
     >
-      <span className="todo-item__remove" onClick={(e) => dispatch(removeTodo(id))}><CancelPresentationIcon/></span>
+      <CancelPresentationIcon className="todo-item__remove" onClick={(e) => dispatch(removeTodo(id))}/>
       <p>{description}</p>
     </Card>
   );

@@ -7,10 +7,9 @@ interface CountViewProps {
 };
 
 const CountView: FC<CountViewProps> = (props): JSX.Element => {
-  const { title, initialCount } = props;
+  const { initialCount } = props;
   return (
     <div className="count-page">
-      <h1>{title}</h1>
       <Count initialCount={initialCount} />
     </div>
   );
