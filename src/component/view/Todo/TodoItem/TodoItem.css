@@ -2,6 +2,9 @@
   @apply w-auto relative;
 }
 
+.todo-item.completed{
+  @apply bg-green-100;
+}
 .todo-item__remove {
   @apply absolute top-1 right-3 cursor-pointer text-gray-400;
 }
