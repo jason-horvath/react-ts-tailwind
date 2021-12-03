@@ -1,0 +1,7 @@
+.list {
+  @apply m-10;
+}
+
+.list > li {
+  @apply list-disc;
+}
