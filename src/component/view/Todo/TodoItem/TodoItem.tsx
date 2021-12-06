@@ -1,4 +1,4 @@
-import { FC, MouseEvent } from 'react';
+import { FC, FocusEvent, MouseEvent } from 'react';
 import { useDispatch } from 'react-redux'
 import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import { Card } from '@block';
@@ -19,6 +19,11 @@ const TodoItem: FC<TodoItemInterface> = (props): JSX.Element => {
     if (isDoubleClick(e)) dispatch(toggleTodoCompleted(id));
   }
 
+  const dispatchUpdateTodo = (e: FocusEvent<HTMLParagraphElement>) => {
+    console.log(e.target.innerHTML);
+
+  }
+
   return (
     <Card
       className={(completed ? 'completed ' : '') + "todo-item card"}
@@ -26,7 +31,7 @@ const TodoItem: FC<TodoItemInterface> = (props): JSX.Element => {
       onClick={dispatchToggleTodoCompleted}
     >
       <CancelPresentationIcon className="todo-item__remove" onClick={dispatchRemoveTodo}/>
-      <p>{description}</p>
+      <p contentEditable={true} onBlur={dispatchUpdateTodo}>{description}</p>
     </Card>
   );
 }
